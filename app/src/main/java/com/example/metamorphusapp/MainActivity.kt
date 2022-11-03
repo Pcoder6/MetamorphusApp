@@ -36,14 +36,16 @@ import java.util.Locale
 
 typealias LumaListener = (luma: Double) -> Unit
 
+//02-Nov-22, K. Saeed
+//commented out recording button, etc. code
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivityMainBinding
 
     private var imageCapture: ImageCapture? = null
 
-    private var videoCapture: VideoCapture<Recorder>? = null
-    private var recording: Recording? = null
+    //private var videoCapture: VideoCapture<Recorder>? = null
+    //private var recording: Recording? = null
 
     private lateinit var cameraExecutor: ExecutorService
 
@@ -62,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
         // Set up the listeners for take photo and video capture buttons
         viewBinding.imageCaptureButton.setOnClickListener { takePhoto() }
-        viewBinding.videoCaptureButton.setOnClickListener { captureVideo() }
+        //viewBinding.videoCaptureButton.setOnClickListener { captureVideo() }
 
         cameraExecutor = Executors.newSingleThreadExecutor()
     }
@@ -108,7 +110,7 @@ class MainActivity : AppCompatActivity() {
             }
         )
     }
-    private fun captureVideo() {
+    /*private fun captureVideo() {
         val videoCapture = this.videoCapture ?: return
 
         viewBinding.videoCaptureButton.isEnabled = false
@@ -175,6 +177,8 @@ class MainActivity : AppCompatActivity() {
                 }
             }
     }
+
+     */
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 

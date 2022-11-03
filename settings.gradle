@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MetamorphusApp"
 include ':app'
+
+include ':openCVLibrary343'
+include ':openCVLibrary343'
